@@ -1,6 +1,4 @@
 const canvas = document.querySelector(".canvas");
-canvas.style.cssText = "display: flex; width:960px; height:960px; border: 5px solid red;"
-
 
 
 function promptEnter() {
@@ -27,8 +25,8 @@ function createCanvas(nrows){
         for (let j = 0; j < nrows; j++){
             const grid = document.createElement("div");
             grid.style.cssText = "   flex:1;  border: 0.5px solid pink; background-color: white; ";
-            grid.style.width = 960/nrows-1 + "px";
-            grid.style.height = 960/nrows-1 + "px";
+            grid.style.width = 640/nrows-1 + "px";
+            grid.style.height = 640/nrows-1 + "px";
 
             grid.classList.add("grid");
             row.appendChild(grid);
@@ -43,8 +41,8 @@ function createCanvas(nrows){
 
     for (const g of grids){
         g.addEventListener("mouseover", function(e){
-            //e.target.classList.toggle("touched");
-            e.target.style.background = "#" + ((1 << 24) * Math.random() | 0).toString(16).padStart(6, "0");
+            //e.target.style.background = "#" + ((1 << 24) * Math.random() | 0).toString(16).padStart(6, "0");
+            e.target.style.background = "gray";
         });
     }
 }
